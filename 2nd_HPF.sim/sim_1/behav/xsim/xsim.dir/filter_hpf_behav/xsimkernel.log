@@ -1,0 +1,7 @@
+Running: xsim.dir/filter_hpf_behav/xsimk.exe -simmode gui -wdb filter_hpf_behav.wdb -simrunnum 0 -socket 55065
+Design successfully loaded
+Design Loading Memory Usage: 8536 KB (Peak: 8536 KB)
+Design Loading CPU Usage: 0 ms
+Simulation completed
+Simulation Memory Usage: 9312 KB (Peak: 9312 KB)
+Simulation CPU Usage: 0 ms

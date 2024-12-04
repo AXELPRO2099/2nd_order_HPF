@@ -1,0 +1,44 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Sat Nov 16 17:54:29 2024
+# Process ID: 22868
+# Current directory: C:/Users/adity/OneDrive/Desktop/vivado_ws/2nd_HPF
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent16456 C:\Users\adity\OneDrive\Desktop\vivado_ws\2nd_HPF\2nd_HPF.xpr
+# Log file: C:/Users/adity/OneDrive/Desktop/vivado_ws/2nd_HPF/vivado.log
+# Journal file: C:/Users/adity/OneDrive/Desktop/vivado_ws/2nd_HPF\vivado.jou
+# Running On        :LAPTOP-M8VKKVLO
+# Platform          :Windows Server 2016 or Windows 10
+# Operating System  :22631
+# Processor Detail  :AMD Ryzen 7 5800H with Radeon Graphics         
+# CPU Frequency     :3194 MHz
+# CPU Physical cores:8
+# CPU Logical cores :16
+# Host memory       :14877 MB
+# Swap memory       :4563 MB
+# Total Virtual     :19440 MB
+# Available Virtual :5951 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/adity/OneDrive/Desktop/vivado_ws/2nd_HPF/2nd_HPF.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+source filter_hpf.tcl
+add_force {/filter_hpf/clk} -radix bin {1 0ns}
+add_force {/filter_hpf/clk} -radix bin {1 0ns} {0 50000000ps} -repeat_every 100000000ps
+run 2 s
+add_force {/filter_hpf/clk} -radix bin {1 1ns} {0 51000ps} -repeat_every 100000ps
+run 2 s
+relaunch_sim
+add_force {/filter_hpf/clk} -radix bin {1 0ns} {0 50000000ps} -repeat_every 100000000ps
+add_force {/filter_hpf/rst} -radix bin {1 0ns}
+run 200 us
+add_force {/filter_hpf/rst} -radix bin {0 0ns}
+run 200 us
+add_force {/filter_hpf/x} -radix smag {255 0ns} {-255 50000ps} -repeat_every 100000ps
+run 200 us
+add_force {/filter_hpf/x} -radix dec {255 6.283185307ns} {-255 1577079ps} -repeat_every 3141592ps
+run 200 us
+close_sim
